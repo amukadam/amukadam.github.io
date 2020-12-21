@@ -13128,7 +13128,8 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Data-Collection-and-Data-Tidying">Data Collection and Data Tidying<a class="anchor-link" href="#Data-Collection-and-Data-Tidying">&#182;</a></h2><p>First, I'll read in the relevant datasets and preprocess them in order to match our expository objectives.</p>
 <h3 id="Financial-Data">Financial Data<a class="anchor-link" href="#Financial-Data">&#182;</a></h3><p>In order to measure general economic activity, I'll utilize the S&amp;P 500 Index. The S&amp;P 500 is an index of the 500 largest publicly traded companies in the United States weighted by market capitalization, the size of company in dollars. Some of the companies in the S&amp;P 500 are younger, such as Alphabet (Google), Amazon, and Facebook, while others are older, such as Disney, General Electric, and Ford. When the share prices of companies in the index depreciate, so does the index as a whole. Likewise, when the share price of companies appreciate, so does the index.</p>
-<p>The S&amp;P 500 data is available on Yahoo Finance in .csv format. The dataset contains daily-resolution index data from 1920 onwards. In order to make the dataset most relevant to our analysis, I have limited the data to the past 50 years, from 1970 onwards. Furthermore, I transformed the 'Date' column to a datetime format in order to improve functionality later.</p>
+<p><a href="https://www.investopedia.com/terms/s/sp500.asp">Read More: About the S&amp;P 500</a></p>
+<p>The S&amp;P 500 data is available on <a href="https://finance.yahoo.com/quote/%5EGSPC/history">Yahoo Finance</a> in .csv format. The dataset contains daily-resolution index data from 1920 onwards. In order to make the dataset most relevant to our analysis, I have limited the data to the past 50 years, from 1970 onwards. Furthermore, I transformed the 'Date' column to a datetime format in order to improve functionality later.</p>
 
 </div>
 </div>
@@ -13393,6 +13394,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For my analysis, I utilize 'Adj Close'. 'Adj Close' is the adjusted value of the index at 4:00 PM, the end of the trading day. The adjusted close accounts for corporate actions that affect the raw share price but not the share value. Events such as these (stock splits, dividends, etc.) are beyond the scope of this analysis.</p>
+<p><a href="https://www.investopedia.com/terms/a/adjusted_closing_price.asp">Read More: What is the Adjusted Closing Price?</a></p>
 <p>As you can see, in the past ~50 years, the S&amp;P 500 has appreciated more than 41,000%! 
 If you invested \$10,000 into the index in 1970, today you would have approximately \\$410,000!</p>
 <p>Here's a graph of the index's daily performance from 1970 to today:</p>
@@ -13444,6 +13446,7 @@ If you invested \$10,000 into the index in 1970, today you would have approximat
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can see the impact of several global economic and political events such as the Crash of 1987, the effects of the Dot Com Bubble + the September 11th attacks, the 2008 Financial Crisis, the 2018 Trade War, and the 2020 COVID-19 pandemic.</p>
+<p><a href="https://www.ig.com/en/trading-strategies/the-worst-stock-market-crashes-of-all-time-181031">Read More: The worst stock market crashes of all time, and why they happened</a></p>
 
 </div>
 </div>
@@ -13451,7 +13454,7 @@ If you invested \$10,000 into the index in 1970, today you would have approximat
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Movie-Data">Movie Data<a class="anchor-link" href="#Movie-Data">&#182;</a></h3><p>The data I used for movies is available on IMBD. The dataset includes entries for non-movie media such as TV shows, short films, and other misc. video. Thus, I preprocess the data in several ways. First, I remove all entries where the runtime, the genre, or the start year is unknown. Next, I transform the start year and runtime columns to from text to numeric. Then, I filter the dataset down to just movies with a runtime of 1 hour or greater. Lastly, I limit movies to titles in the 1970 to 2020 range to match the finanicial data.</p>
+<h3 id="Movie-Data">Movie Data<a class="anchor-link" href="#Movie-Data">&#182;</a></h3><p>The data I used for movies is available on <a href="https://datasets.imdbws.com/">IMBD</a>. The dataset includes entries for non-movie media such as TV shows, short films, and other misc. video. Thus, I preprocess the data in several ways. First, I remove all entries where the runtime, the genre, or the start year is unknown. Next, I transform the start year and runtime columns to from text to numeric. Then, I filter the dataset down to just movies with a runtime of 1 hour or greater. Lastly, I limit movies to titles in the 1970 to 2020 range to match the finanicial data.</p>
 
 </div>
 </div>
@@ -13568,64 +13571,64 @@ If you invested \$10,000 into the index in 1970, today you would have approximat
   </thead>
   <tbody>
     <tr>
-      <th>3203053</th>
-      <td>tt1518231</td>
+      <th>81001</th>
+      <td>tt0082764</td>
       <td>movie</td>
-      <td>Onan</td>
-      <td>Onan</td>
+      <td>Modern Romance</td>
+      <td>Modern Romance</td>
+      <td>0</td>
+      <td>1981</td>
+      <td>\N</td>
+      <td>93</td>
+      <td>Comedy,Romance</td>
+    </tr>
+    <tr>
+      <th>3088211</th>
+      <td>tt1399186</td>
+      <td>movie</td>
+      <td>Ei Prithibi Tomar Aamar</td>
+      <td>Ei Prithibi Tomar Aamar</td>
       <td>0</td>
       <td>2009</td>
-      <td>\N</td>
-      <td>95</td>
-      <td>Action,Crime,Drama</td>
-    </tr>
-    <tr>
-      <th>2493970</th>
-      <td>tt12670908</td>
-      <td>movie</td>
-      <td>Covid-19 Response</td>
-      <td>Covid-19 Response</td>
-      <td>0</td>
-      <td>2020</td>
-      <td>\N</td>
-      <td>74</td>
-      <td>Family</td>
-    </tr>
-    <tr>
-      <th>126950</th>
-      <td>tt0130392</td>
-      <td>movie</td>
-      <td>Armavir</td>
-      <td>Armavir</td>
-      <td>0</td>
-      <td>1991</td>
       <td>\N</td>
       <td>130</td>
-      <td>Drama</td>
+      <td>Drama,Musical,Romance</td>
     </tr>
     <tr>
-      <th>365229</th>
-      <td>tt0380510</td>
+      <th>3535883</th>
+      <td>tt1865505</td>
       <td>movie</td>
-      <td>The Lovely Bones</td>
-      <td>The Lovely Bones</td>
+      <td>Song of the Sea</td>
+      <td>Song of the Sea</td>
       <td>0</td>
-      <td>2009</td>
+      <td>2014</td>
       <td>\N</td>
-      <td>135</td>
-      <td>Drama,Fantasy,Thriller</td>
+      <td>93</td>
+      <td>Adventure,Animation,Drama</td>
     </tr>
     <tr>
-      <th>1427641</th>
-      <td>tt10804178</td>
+      <th>143756</th>
+      <td>tt0148097</td>
       <td>movie</td>
-      <td>Jak zostalem gangsterem. Historia prawdziwa</td>
-      <td>Jak zostalem gangsterem. Historia prawdziwa</td>
+      <td>The Edge of Power</td>
+      <td>The Edge of Power</td>
       <td>0</td>
-      <td>2019</td>
+      <td>1987</td>
       <td>\N</td>
-      <td>140</td>
-      <td>Crime,Drama</td>
+      <td>94</td>
+      <td>Thriller</td>
+    </tr>
+    <tr>
+      <th>208501</th>
+      <td>tt0217136</td>
+      <td>movie</td>
+      <td>Pretty Devils</td>
+      <td>Voyous voyelles</td>
+      <td>0</td>
+      <td>1999</td>
+      <td>\N</td>
+      <td>95</td>
+      <td>Comedy,Drama</td>
     </tr>
   </tbody>
 </table>
@@ -13690,6 +13693,7 @@ If you invested \$10,000 into the index in 1970, today you would have approximat
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can see that movies became very popular after 2000, perhaps the effects of production equipment becoming cheaper over time and distribution becoming simpler due to the Internet. You can also see the impact of the 2020 COVID-19 pandemic, as theatres closed, forcing studios to push their movies to release in 2021 and onwards.</p>
+<p><a href="https://en.wikipedia.org/wiki/Impact_of_the_COVID-19_pandemic_on_cinema">Read More: Impact of COVID-19 on Cinemas</a></p>
 
 </div>
 </div>
@@ -13763,6 +13767,7 @@ If you invested \$10,000 into the index in 1970, today you would have approximat
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A problem mentioned previously is that, in general, more movies were produced after 2000. Furthermore, some genres are far more popular than others e.g. Drama vs Mystery. For my analysis, I want to look at the relative popularity of a particular genre in excess to other genres in that year. This requires normalizing the data. I utilize Min-Max normalization.</p>
+<p><a href="https://www.codecademy.com/articles/normalization">Read More: Min-Max Normalization and other normalization techniques</a></p>
 
 </div>
 </div>
@@ -13852,6 +13857,7 @@ If you invested \$10,000 into the index in 1970, today you would have approximat
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Interestingly, we see a spike in Action movies from the mid 80s to the mid 90s. Most likely, this is studios trying to capitalize on the success of other well recieved action movie franchises, such as The Terminator (1984), Predator (1987), and Die Hard (1988), among others. There's also a similar spike for Romance movies from the mid 90s to the mid 2000s. Similarly, theres an early drop off in the Romance genre, although the reason for this is unknown.</p>
+<p><a href="https://www.nytimes.com/2012/04/01/magazine/how-the-american-action-movie-went-kablooey.html">Read More: NYT on American Action Movies</a></p>
 <h3 id="Relative-Genre-Popularity">Relative Genre Popularity<a class="anchor-link" href="#Relative-Genre-Popularity">&#182;</a></h3><p>Normalizing is helpful, but in order to determine if a certain genre predicts or reacts to consumer sentiment, I need to determine how popular it is relative to other genres at the time. The best way to do this is to take the normalized genre values and subtract the normalized values of all movies to calculate the genre's excess popularity for that year.</p>
 
 </div>
@@ -14250,7 +14256,7 @@ If you invested \$10,000 into the index in 1970, today you would have approximat
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># AMC</span>
@@ -14353,7 +14359,7 @@ If you invested \$10,000 into the index in 1970, today you would have approximat
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># AMC</span>
@@ -14383,7 +14389,7 @@ If you invested \$10,000 into the index in 1970, today you would have approximat
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[49]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -14865,13 +14871,14 @@ If you invested \$10,000 into the index in 1970, today you would have approximat
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Regression-to-Predict-AMC's-Returns">Regression to Predict AMC's Returns<a class="anchor-link" href="#Regression-to-Predict-AMC's-Returns">&#182;</a></h2><p>With a correlation of 0.705 and 0.574, lets see if we can predict AMC's returns for 2020 based on the popularity of the Romance and Thriller genres.</p>
 <p>Below, I take the normalized count of Romance/Thriller movies, and fit it to the actual Adj. Close of AMC stock from 2013 to 2020. Then, I utilize the normalized count to determine predicted stock price for the same duration.</p>
+<p><a href="https://towardsai.net/p/machine-learning/netflix-stock-prediction-model-a-comparative-study-of-linear-regression-k-nearest-neighbor-knn-4527ff17939b">Read More: Using Linear Regression, KNN, and SVMs to predict Netflix Stock price</a></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[117]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">romance_count_norm_df2</span> <span class="o">=</span> <span class="n">romance_count_norm_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
